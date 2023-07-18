@@ -18,37 +18,31 @@ chmod +x strap.sh
 pacman -Syyu
 
 # Install some essentials
-pacman -Syy --needed vim \
+pacman -Syy --needed nvim \
 	base-devel \
 	go \
 	rustup \
 	tmux \
-	npm \
-	nvm \
-	yarn \
+	# npm \
+	# nvm \
+	# yarn \
 	keepassxc \
 	ripgrep
 
 # hacking/networking tools
-pacman -Syy --needed wireshark-qt \
-	perl-image-exiftool \
-	tcpdump \
-	hashcat
+# pacman -Syy --needed wireshark-qt \
+# 	perl-image-exiftool \
+# 	tcpdump \
+# 	hashcat
 
 # personal cloud
 pacman -Syy --needed nextcloud-client
 
 # vbox version must match kernel version so print it out to help choose the right version
-uname -a
-pacman -Syy --needed virtualbox virtualbox-guest-iso 
+# uname -a
+# pacman -Syy --needed virtualbox virtualbox-guest-iso 
 
 # TODO: Add yay for AUR packages
 
 # cleanup
 pacman -Sc # clean
-rm strap.sh
-
-# log out of root
-exit
-
-
