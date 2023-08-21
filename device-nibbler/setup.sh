@@ -48,3 +48,8 @@ pacman -Syy --needed nextcloud-client
 
 # cleanup
 pacman -Sc # clean
+
+# === RUST CONFIGURATION
+rustup toolchain install nightly
+rustup target add wasm32-unknown-unknown
+rustup target add wasm32-unknown-unknown --toolchain nightly
