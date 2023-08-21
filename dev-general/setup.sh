@@ -12,10 +12,10 @@ pacman -Syy --needed neovim \
 	go \
 	rustup \
 	tmux \
+	ripgrep
 	# npm \
 	# nvm \
 	# yarn \
-	ripgrep
 
 # cleanup
 pacman -Sc # clean

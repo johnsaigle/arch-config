@@ -24,11 +24,11 @@ pacman -Syy --needed neovim \
 	go \
 	rustup \
 	tmux \
+	keepassxc \
+	ripgrep
 	# npm \
 	# nvm \
 	# yarn \
-	keepassxc \
-	ripgrep
 
 # hacking/networking tools
 # pacman -Syy --needed wireshark-qt \
