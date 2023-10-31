@@ -36,9 +36,6 @@ pacman -Syy --needed neovim \
 # 	tcpdump \
 # 	hashcat
 
-# personal cloud
-pacman -Syy --needed nextcloud-client
-
 # === VIRTUALBOX
 # vbox version must match kernel version so print it out to help choose the right version
 # uname -a

@@ -3,8 +3,14 @@
 set -e
 set -x
 
-# Update index including blackarch
+# Update
 pacman -Syyu
+
+# Networking - system resolver and wi-fi if necessary
+systemctl enable systemd-resolved iwd
+
+# sshd file
+echo 'Include /etc/ssh/sshd_config.d/*.conf' >> /etc/ssh/sshd_config
 
 # Install some essentials
 pacman -Syy --needed neovim \
