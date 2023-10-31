@@ -37,4 +37,4 @@ pacman -Sc # clean
 rustup toolchain install nightly
 rustup target add wasm32-unknown-unknown
 rustup target add wasm32-unknown-unknown --toolchain nightly
-
+rustup default nightly
