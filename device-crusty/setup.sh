@@ -28,17 +28,33 @@ pacman -Syy --needed \
 	tmux \
 	ufw \
 	weechat \
-	whois
+	whois \
+	zsh
 	
 # cleanup
 pacman -Sc # clean
 
-# === RUST CONFIGURATION
-rustup toolchain install nightly
-rustup target add wasm32-unknown-unknown
-rustup target add wasm32-unknown-unknown --toolchain nightly
-rustup default nightly
 
 # === SSH
 # generate ssh default host key
 ssh-keygen -A
+
+# Create lower level user
+useradd -m -s /bin/zsh dev 
+
+# === RUST CONFIGURATION
+rustup toolchain install stable # is this necessary?
+rustup toolchain install nightly
+rustup target add wasm32-unknown-unknown
+rustup target add wasm32-unknown-unknown --toolchain nightly
+
+# zsh might add a prompt here if no defaults are present
+su dev && cd
+
+# === AUR
+# Testing out: paru. https://github.com/morganamilo/paru
+git clone https://aur.archlinux.org/paru.git /home/dev/
+cd /home/dev/paru
+makepkg -si # must be run as low level user
+
+rustup default nightly
