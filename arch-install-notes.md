@@ -29,20 +29,17 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 # regenerate grub config with new changes
 grub-mkconfig -o /boot/grub/grub.cfg
 
-systemctl enable iwctl
-
-# system tools
+# Things to install with pacman: system tools
 less
 sudo
 bind
 rsync
 git
 whois
+ufw
 
 # bluetooth
 bluez bluez-utils
-
 systemctl enable bluetooth.service --now
 
-ufw
 ```
