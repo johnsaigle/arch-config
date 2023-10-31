@@ -27,8 +27,8 @@ pacman -Syy --needed \
 	rustup \
 	tmux \
 	ufw \
-	weechat
-	whois \
+	weechat \
+	whois
 	
 # cleanup
 pacman -Sc # clean
