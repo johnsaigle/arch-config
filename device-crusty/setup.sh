@@ -38,3 +38,7 @@ rustup toolchain install nightly
 rustup target add wasm32-unknown-unknown
 rustup target add wasm32-unknown-unknown --toolchain nightly
 rustup default nightly
+
+# === SSH
+# generate ssh default host key
+ssh-keygen -A
