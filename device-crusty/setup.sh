@@ -16,8 +16,10 @@ systemctl enable systemd-resolved iwd
 pacman -Syy --needed \
 	base-devel \
 	bind \
+	docker \
+	docker-compose
 	git \
-	go \
+	#go \
 	less \
 	neovim \
 	netcat \
@@ -41,6 +43,8 @@ ssh-keygen -A
 
 # Create lower level user
 useradd -m -s /bin/zsh dev 
+usermod -aG docker dev
+
 
 # === RUST CONFIGURATION
 rustup toolchain install stable # is this necessary?
