@@ -29,8 +29,10 @@ pacman -Syy --needed neovim \
 	tig \
 	tmux \
 	keepassxc \
+	qbittorrent \
 	ripgrep \
-	ufw
+	ufw \
+	vlc
 	# npm \
 	# nvm \
 	# yarn \
