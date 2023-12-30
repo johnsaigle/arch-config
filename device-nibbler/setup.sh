@@ -31,6 +31,7 @@ pacman -Syy --needed neovim \
 	keepassxc \
 	qbittorrent \
 	ripgrep \
+	syncthing \
 	ufw \
 	vlc
 	# npm \
@@ -63,7 +64,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 # pacman -R kdeconnect
 # pacman -R kpeoplevcard
 
-
+# === FIREWALL
 # Simple configure for ufw: allow only local, limited SSH
 # https://wiki.archlinux.org/title/Uncomplicated_Firewall#Basic_configuration
 ufw default deny
@@ -73,3 +74,9 @@ ufw limit ssh
 # accidentally booting oneself when configuring remotely via ssh
 ufw allow proto tcp from any to any port 22
 ufw enable
+
+# === CREATE USER
+
+# === ENABLE SERVICES
+# https://wiki.archlinux.org/title/Syncthing#Autostarting_Syncthing
+#systemctl enable syncthing@user.service
