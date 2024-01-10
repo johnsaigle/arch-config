@@ -13,10 +13,13 @@ systemctl enable systemd-resolved iwd
 echo 'Include /etc/ssh/sshd_config.d/*.conf' >> /etc/ssh/sshd_config
 
 # Install some essentials
-pacman -Syy --needed neovim \
+pacman -Syy --needed \
 	base-devel \
+	docker \
 	go \
+	neovim \
 	rustup \
+	tig \
 	tmux \
 	ripgrep
 	# npm \
