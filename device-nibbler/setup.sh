@@ -56,6 +56,8 @@ pacman -Syy --needed neovim \
 pacman -Sc # clean
 
 # === RUST CONFIGURATION
+# This installs nightly
+rustup default stable
 rustup toolchain install nightly
 rustup target add wasm32-unknown-unknown
 rustup target add wasm32-unknown-unknown --toolchain nightly
@@ -68,7 +70,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 # Simple configure for ufw: allow only local, limited SSH
 # https://wiki.archlinux.org/title/Uncomplicated_Firewall#Basic_configuration
 ufw default deny
-ufw allow from 192.168.0.0/24
+ufw allow from 192.168.0.0/24 # Verify. May instead be /24 on 192.168.1.0, etc.
 ufw limit ssh
 # this may be redundant/conflciting with above. taken from `info ufw`. should prevent
 # accidentally booting oneself when configuring remotely via ssh
@@ -76,7 +78,11 @@ ufw allow proto tcp from any to any port 22
 ufw enable
 
 # === CREATE USER
+# sudo usermod -aG docker <username>
 
 # === ENABLE SERVICES
+#
 # https://wiki.archlinux.org/title/Syncthing#Autostarting_Syncthing
 #systemctl enable syncthing@user.service
+
+#systemctl enable docker.service docker.socket

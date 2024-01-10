@@ -4,7 +4,7 @@ Goal: Create an encrypted root partition and get the system set-up minimally
 
 ```
 # basics
-pacstrap -K /mnt base linux linux-firmware neovim iwd grub efibootmgr intel-ucode
+pacstrap -K /mnt base linux linux-firmware neovim iwd grub efibootmgr # AND microcode: intel-ucode OR amd-ucode
 
 # generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
