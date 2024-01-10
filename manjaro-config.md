@@ -9,3 +9,5 @@ Enable:
 - caps --> ctrl
 
 hide package update notifs
+
+Import new terminal window shortcut (device-nibbler/)
