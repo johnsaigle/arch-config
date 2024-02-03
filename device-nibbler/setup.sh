@@ -33,6 +33,7 @@ pacman -Syy --needed neovim \
 	ripgrep \
 	syncthing \
 	ufw \
+	xclip \
 	vlc
 	# npm \
 	# nvm \

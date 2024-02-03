@@ -19,6 +19,7 @@ pacman -Syy --needed \
 	docker \
 	docker-compose
 	git \
+	fd \
 	#go \
 	less \
 	neovim \
@@ -29,7 +30,6 @@ pacman -Syy --needed \
 	rustup \
 	tmux \
 	ufw \
-	weechat \
 	whois \
 	zsh
 	

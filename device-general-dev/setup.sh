@@ -16,7 +16,8 @@ echo 'Include /etc/ssh/sshd_config.d/*.conf' >> /etc/ssh/sshd_config
 # NOTE: Add user to docker group; systemctl enable docker.service and docket.socket
 pacman -Syy --needed \
 	base-devel \
-	docker \ 
+	docker \
+	fd \
 	go \
 	neovim \
 	rustup \
