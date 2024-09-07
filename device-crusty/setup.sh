@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # must be run as root because of pacman
-set -e
-set -x
+set -ex
 
 # Update
 pacman -Syyu
@@ -17,10 +16,9 @@ pacman -Syy --needed \
 	base-devel \
 	bind \
 	docker \
-	docker-compose
+	docker-compose \
 	git \
 	fd \
-	#go \
 	less \
 	neovim \
 	netcat \
@@ -40,6 +38,17 @@ pacman -Sc # clean
 # generate ssh default host key
 ssh-keygen -A
 
+# Create lower level user
+useradd -m -s /bin/zsh dev 
+usermod -aG docker dev # Must logout of `dev` for this to take effect
+
+# === ENABLE SERVICES
+systemctl enable docker.service docker.socket
+
+# === LOW-LEVEL COMMANDS (non-root)
+
+# zsh might add a prompt here if no defaults are present
+su dev && cd
 
 # === RUST CONFIGURATION
 rustup default stable
@@ -47,20 +56,9 @@ rustup toolchain install nightly
 rustup target add wasm32-unknown-unknown
 rustup target add wasm32-unknown-unknown --toolchain nightly
 
-# === ENABLE SERVICES
-systemctl enable docker.service docker.socket
-
-# zsh might add a prompt here if no defaults are present
-su dev && cd
-
-# Create lower level user
-useradd -m -s /bin/zsh dev 
-usermod -aG docker dev # Must logout of `dev` for this to take effect
-
 # === AUR
 # Testing out: paru. https://github.com/morganamilo/paru
 # must be run as low level user
-git clone https://aur.archlinux.org/paru.git /home/dev/
-cd /home/dev/paru
+git clone https://aur.archlinux.org/paru.git "$HOME"
+cd "$HOME/paru"
 makepkg -si 
-
