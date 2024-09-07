@@ -18,6 +18,7 @@ pacman -Syy --needed \
 	docker \
 	docker-compose \
 	git \
+	go \
 	fd \
 	less \
 	neovim \
