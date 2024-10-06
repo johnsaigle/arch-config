@@ -19,14 +19,12 @@ pacman -Syy --needed \
 	docker \
 	fd \
 	go \
+	fish \
 	neovim \
 	rustup \
 	tig \
 	tmux \
 	ripgrep
-	# npm \
-	# nvm \
-	# yarn \
 
 # cleanup
 pacman -Sc # clean

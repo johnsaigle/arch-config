@@ -23,7 +23,9 @@ pacman -Syyu
 pacman -Syy --needed neovim \
 	alacritty \
 	base-devel \
+	dictd \
 	go \
+	fish \
 	man \
 	rustup \
 	tig \
@@ -35,9 +37,6 @@ pacman -Syy --needed neovim \
 	ufw \
 	xclip \
 	vlc
-	# npm \
-	# nvm \
-	# yarn \
 	
 
 # hacking/networking tools
