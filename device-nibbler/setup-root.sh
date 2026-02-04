@@ -34,8 +34,8 @@ pacman -Syy --needed neovim \
 	shellcheck \
 	strace \
 	eza \
-	openssh
-	# npm \
+	openssh \
+	zizmor
 	# nvm \
 	# yarn \
 	

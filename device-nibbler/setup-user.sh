@@ -27,6 +27,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 # === DOTFILES AND CONFIGURATION
 # Clone nvim config
+# TODO: change this to SSH clone
 NVIM_CONFIG_DIR="$HOME/.config/nvim"
 if [ ! -d "$NVIM_CONFIG_DIR" ]; then
 	echo "Cloning nvim configuration..."
@@ -36,6 +37,7 @@ else
 fi
 
 # Clone rcs and apply configuration
+# TODO: change this to SSH clone
 RCS_DIR="$HOME/rcs"
 if [ ! -d "$RCS_DIR" ]; then
 	echo "Cloning rcs repository..."
